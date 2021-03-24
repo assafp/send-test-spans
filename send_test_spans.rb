@@ -1,3 +1,4 @@
+require 'epsagon'
 require 'faraday'
 require 'net/http'
 
