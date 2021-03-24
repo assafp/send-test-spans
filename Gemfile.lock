@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    epsagon (0.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  epsagon (~> 0.0.0)
+
+BUNDLED WITH
+   1.17.3
