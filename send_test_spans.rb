@@ -2,7 +2,7 @@ require './lib/epsagon'
 require 'faraday'
 require 'net/http'
 
-BACKEND = 'localhost:4569/test/trace/path'
+BACKEND = 'opentelemetry.tc.epsagon.com'
 
 Epsagon.init(metadata_only: false, debug: true, backend: BACKEND, insecure: true, app_name: 'send-test-spans')
 
