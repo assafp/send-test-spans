@@ -1,13 +1,13 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    epsagon (0.0.1)
+    epsagon (0.0.2)
     faraday (1.3.0)
       faraday-net_http (~> 1.0)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
     faraday-net_http (1.0.1)
-    google-protobuf (3.15.6)
+    google-protobuf (3.15.7)
     multipart-post (2.1.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
@@ -36,7 +36,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  epsagon (~> 0.0.1)
+  epsagon (~> 0.0.2)
   faraday (~> 1.3)
   opentelemetry-api (~> 0.16.0)
   opentelemetry-exporter-otlp (~> 0.16.0)

@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 require 'sinatra'
-require './lib/epsagon'
+require '../epsagon-ruby/lib/epsagon'
 require 'json'
 require 'net/http'
 
-BACKEND = 'localhost:4569/test/trace/path'
+BACKEND = 'opentelemetry.tc.epsagon.com:443/traces'
 
-Epsagon.init(metadata_only: false, debug: true, backend: BACKEND, insecure: true, app_name: 'send-test-spans')
+Epsagon.init(metadata_only: false, debug: true, backend: BACKEND, app_name: 'send-test-spans')
 
 OpenTelemetry::SDK.configure do |c|
   c.add_span_processor OpenTelemetry::SDK::Trace::Export::SimpleSpanProcessor.new(

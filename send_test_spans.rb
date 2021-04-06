@@ -1,17 +1,17 @@
-require './lib/epsagon'
+require 'epsagon'
 require 'faraday'
 require 'net/http'
 
-BACKEND = 'opentelemetry.tc.epsagon.com'
+BACKEND = 'opentelemetry.tc.epsagon.com:443/traces'
 
-Epsagon.init(metadata_only: false, debug: true, backend: BACKEND, insecure: true, app_name: 'send-test-spans')
+Epsagon.init(metadata_only: false, debug: true, backend: BACKEND, app_name: 'send-test-spans')
 
 # add custom resource tag:
-OpenTelemetry::SDK.configure do |c|
-  c.resource = OpenTelemetry::SDK::Resources::Resource.telemetry_sdk.merge(
-    OpenTelemetry::SDK::Resources::Resource.create({ 'custom_resource_tag' => 'custom_resource_tag_val' })
-  )
-end
+# OpenTelemetry::SDK.configure do |c|
+#   c.resource = OpenTelemetry::SDK::Resources::Resource.telemetry_sdk.merge(
+#     OpenTelemetry::SDK::Resources::Resource.create({ 'custom_resource_tag' => 'custom_resource_tag_val' })
+#   )
+# end
 
 pids = {}
 pids[:traced_app] = spawn 'ruby traced_sinatra.rb'
