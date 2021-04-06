@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'sinatra'
-require '../epsagon-ruby/lib/epsagon'
+require 'epsagon'
 require 'json'
 require 'net/http'
 
