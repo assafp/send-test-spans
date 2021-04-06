@@ -10,6 +10,6 @@ $ bundle install
 ## Usage:
 
 ```bash
-$ ruby send-test-spans.rb
+$ EPSAGON_TOKEN=<token> ruby send_test_spans.rb
 ```
 
